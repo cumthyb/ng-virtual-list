@@ -1,0 +1,16 @@
+<ng-container >
+  <div #list class="infinite-list-container" (scroll)="onScroll($event)">
+    <div class="infinite-list-phantom" [ngStyle]="{height: listHeight + 'px' }"></div>
+    <div class="infinite-list" [ngStyle]="{ transform: getTransform }">
+      <div #items
+        class="infinite-list-item" 
+        *ngFor="let item of visibleData"
+        [ngStyle]="{height: itemSize + 'px',lineHeight: itemSize + 'px'}"
+      >
+      {{item.count}}
+      <!-- <span class="col col1">{{item.str}}</span>
+      <span class="col col2">{{item.count}}</span> -->
+    </div>
+    </div>
+  </div>
+</ng-container>
