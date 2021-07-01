@@ -1,7 +1,11 @@
 <div class="chart-container">
   <virtual-list
     [listData]="listData"
-    screenHeight="400"
-    itemSize="30"
+    [cols]="[
+      { name: 'str', flex: 3 },
+      { name: 'count', flex: 3 },
+      { name: 'p', flex: 1 }
+    ]"
+    visibleHeight="400"
   ></virtual-list>
 </div>

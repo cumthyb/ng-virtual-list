@@ -3,33 +3,50 @@
   overflow: auto;
   position: relative;
   -webkit-overflow-scrolling: touch;
-}
+  font-size: 12px;
+  line-height: 24px;
 
-.infinite-list-phantom {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  z-index: -1;
-}
+  .infinite-list-phantom {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
 
-.infinite-list {
-  left: 0;
-  right: 0;
-  top: 0;
-  position: absolute;
-  text-align: center;
-}
+  .infinite-list {
+    left: 0;
+    right: 0;
+    top: 0;
+    position: absolute;
+    text-align: center;
 
-.infinite-list-item {
-  padding: 10px;
-  color: #555;
-  box-sizing: border-box;
-  border-bottom: 1px solid #999;
-  display: flex;
-}
-.col {
-  flex: 1;
-  padding:0 10px;
-  text-align: left;
+    .infinite-list-item {
+      box-sizing: border-box;
+      display: flex;
+
+      &:nth-child(even) {
+        background-color: #f9fafa;
+      }
+
+      &:hover {
+        background-color: #addeec;
+      }
+
+      .col {
+        flex: 1;
+        padding: 8px;
+        text-align: left;
+        border-top: none;
+        border-bottom: none;
+        word-break: break-all;
+        vertical-align: top;
+        line-height: calc(100% + 10px);
+
+        :host-context([dir="rtl"]) & {
+          text-align: right;
+        }
+      }
+    }
+  }
 }

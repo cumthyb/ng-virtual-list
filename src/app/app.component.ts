@@ -11,7 +11,7 @@ export class AppComponent {
   public listData = []
 
   ngOnInit() {
-    this.listData = this.getMockData(10);
+    this.listData = this.getMockData(10000);
   }
 
   public getMockData(num) {
@@ -19,8 +19,8 @@ export class AppComponent {
     for (let index = 0; index < num; index++) {
       res.push({
         str: Math.random().toString(36).substring(3, 8),
-        // count: Math.floor(Math.random() * 1000)
-        count: index
+        count: Math.floor(Math.random() * 1000),
+        p:Math.random()
       })
 
     }
